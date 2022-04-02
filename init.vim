@@ -11,6 +11,7 @@ call plug#end()
 runtime colors/molokai.vim
 
 set number
+set ruler
 set expandtab
 set tabstop=4
 set colorcolumn=120
@@ -36,6 +37,6 @@ nmap <silent> <C-LeftMouse> <LeftMouse><Plug>(coc-definition)
 let mapleader = "\\"
 nnoremap <Leader>f :LeaderfSelf<CR>
 nnoremap <Leader>c :CocList<CR>
-nnoremap <Leader>q <Plug>(coc-fix-current)
+nnoremap <Leader>q :CocAction quickfix<CR>
 nnoremap <Leader>d :call CocActionAsync('doHover')<CR>
 nnoremap <Leader>F :call CocActionAsync('format')<CR>
