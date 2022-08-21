@@ -24,7 +24,7 @@ set mouse=a
 
 map <C-n> :NERDTreeToggle<CR>
 
-inoremap <silent><expr> <C-n> coc#refresh()
+inoremap <silent><expr> <C-m> coc#refresh()
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implemention)
