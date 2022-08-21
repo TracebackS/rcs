@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline'
-Plug 'yggdroot/leaderf'
+"Plug 'yggdroot/leaderf'
 Plug 'scrooloose/nerdtree'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
@@ -37,6 +37,7 @@ nmap <silent> <C-LeftMouse> <LeftMouse><Plug>(coc-definition)
 let mapleader = "\\"
 nnoremap <Leader>f :LeaderfSelf<CR>
 nnoremap <Leader>c :CocList<CR>
-nnoremap <Leader>q :CocAction quickfix<CR>
+nnoremap <Leader>q <Plug>(coc-fix-current)
 nnoremap <Leader>d :call CocActionAsync('doHover')<CR>
+nnoremap <Leader>r :call CocActionAsync('rename')<CR>
 nnoremap <Leader>F :call CocActionAsync('format')<CR>
