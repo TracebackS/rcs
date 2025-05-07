@@ -1,11 +1,11 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline'
-"Plug 'yggdroot/leaderf'
 Plug 'scrooloose/nerdtree'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'NMAC427/guess-indent.nvim'
 call plug#end()
 
 runtime colors/molokai.vim
@@ -22,9 +22,9 @@ set laststatus=2
 set cursorline
 set mouse=a
 
-map <C-n> :NERDTreeToggle<CR>
+nmap <C-n> :NERDTreeToggle<CR>
 
-inoremap <silent><expr> <C-m> coc#refresh()
+inoremap <silent><expr> <C-j> coc#refresh()
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implemention)
@@ -35,9 +35,11 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> <C-LeftMouse> <LeftMouse><Plug>(coc-definition)
 
 let mapleader = "\\"
-nnoremap <Leader>f :LeaderfSelf<CR>
 nnoremap <Leader>c :CocList<CR>
 nnoremap <Leader>q <Plug>(coc-fix-current)
 nnoremap <Leader>d :call CocActionAsync('doHover')<CR>
-nnoremap <Leader>r :call CocActionAsync('rename')<CR>
 nnoremap <Leader>F :call CocActionAsync('format')<CR>
+nnoremap <Leader>r :call CocActionAsync('rename')<CR>
+nnoremap <Leader>i :CocCommand document.showIncomingCalls<CR>
+nnoremap <Leader>o :CocCommand document.showOutgoingCalls<CR>
+nnoremap <Leader>s :CocCommand clangd.switchSourceHeader<CR>
