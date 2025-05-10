@@ -31,6 +31,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec "nm-applet"
 # exec "mate-power-manager"
 exec "compton"
+exec "pasystray"
 
 hide_edge_borders both
 
@@ -108,6 +109,8 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+z focus child
 
+bindsym $mod+p exec "scrot ~/Downloads/Screenshot%Y-%m-%d%H:%M:%S.png"
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -184,3 +187,20 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+## Volume control
+
+# Path to volume control, without trailing slash
+#set $volumepath ~/opt/i3-volume
+
+# Command for the status line
+#   ie: i3blocks, i3status
+#set $statuscmd i3status-rs
+
+# Signal used to update the status line
+#   i3blocks uses SIGRTMIN+10 by default
+#   i3status uses SIGUSR1 by default
+#set $statussig SIGUSR1
+
+# Amount to increase/decrease volume as a percentage
+#set $volumestep 5
